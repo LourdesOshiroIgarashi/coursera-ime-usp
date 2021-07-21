@@ -45,14 +45,19 @@ def partida():
     print()
 
 
+# Uma vez iniciado o jogo,
+# a estratégia do computador para ganhar consiste em
+# deixar sempre um número de peças que seja múltiplo de (m+1)
+# ao jogador. Caso isso não seja possível,
+# deverá tirar o número máximo de peças possíveis.
 def computador_escolhe_jogada(n, m):
     if n > m and n % (m +1) == 0:
         pecasremovidas = n - m
     else:
-        if n > m:
-            pecasremovidas = m
-        else:
+        if n < m:
             pecasremovidas = n
+        else:
+            pecasremovidas = m
     if pecasremovidas == 1:
         print("O computador tirou uma peça.")
     else:
